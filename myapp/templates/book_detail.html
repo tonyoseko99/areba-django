@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div style="text-align: center;">
     <h1>Book detail</h1>
-    <p> Title: {{object.title}}</p>
-    <p> Author: {{object.author}}</p>
-    <p> Publication Date: {{object.publication_date}}</p>
+    <p> <strong>Title:</strong> {{book.title}}</p>
+    <p> <strong>Author:</strong> {{book.author}}</p>
+    <p> <strong>publication Date:</strong> {{book.publication_date}}</p>
+</div>
 
 {% endblock %}
