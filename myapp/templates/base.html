@@ -9,10 +9,12 @@
 </head>
 
 <body>
-    <h1>home page</h1>
-    {% block content %}
-    <a href="{% url 'book_list' %}">Book List</a>
-    {% endblock %}
+    <div style="margin: 10px 50px;">
+        <h1 style="color: dimgrey; border-bottom: 3px solid black;">home page</h1>
+        {% block content %}
+        <a href="{% url 'book_list' %}">Book List</a>
+        {% endblock %}
+    </div>
 </body>
 
 </html>
