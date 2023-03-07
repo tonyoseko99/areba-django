@@ -1,20 +1,19 @@
-from django.shortcuts import render
+# create views for the home page, book list, and book detail
 
-# Create your views here.
 from django.shortcuts import render
-from rest_framework import generics
+from django.views.generic import ListView, DetailView
 from myapp.models import Book
-from myapp.serializers import BookSerializer
 
-class BookList(generics.ListCreateAPIView):
-    queryset = Book.objects.all()
-    serializer_class = BookSerializer
-    template_name = 'book_list.html'
-
-class BookDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Book.objects.all()
-    serializer_class = BookSerializer
-    template_name = 'book_detail.html'
-
+# home
 def home(request):
     return render(request, 'home.html')
+
+# BookList
+def BookList(request):
+    books = Book.objects.all()
+    return render(request, 'book_list.html', {'books': books})
+
+# BookDetail
+def BookDetail(request, pk):
+    book = Book.objects.get(pk=pk)
+    return render(request, 'book_detail.html', {'book': book})

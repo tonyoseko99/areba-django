@@ -33,43 +33,7 @@ if __name__ == '__main__':
     populate(20)
     print("Populating Complete")
 
-# Path: myapp/urls.py
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('myapp.urls')),
-]
-
-# Path: myapp/views.py
-
-# Create your views here.
-
-
-def home(request):
-    return render(request, 'home.html')
-
-
-class BookList(ListView):
-    model = Book
-    template_name = 'book_list.html'
-
-
-class BookDetail(DetailView):
-    model = Book
-    template_name = 'book_detail.html'
-
-
-# Path: myapp/models.py
-
-# Create your models here.
-
-class Book(models.Model):
-    title = models.CharField(max_length=200)
-    author = models.CharField(max_length=100)
-    publication_date = models.DateField()
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        ordering = ['title']
+# home
+# BookList
+# BookDetail
