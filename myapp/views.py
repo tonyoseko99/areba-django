@@ -6,7 +6,7 @@ from myapp.models import Book
 
 # home
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'base.html')
 
 # BookList
 def BookList(request):
